@@ -1,0 +1,62 @@
+/* the main color variables for the frontend UI */
+:root {
+  --darkshade: #30535d;
+  --lightshade: #e8ebea;
+  --lightaccent: #dcb265;
+  --darkaccent: #ab6e65;
+  --mainbrand: #7ca8ab;
+}
+
+body {
+  background-color: var(--darkshade);
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+.interface {
+  background-color: var(--lightshade);
+  padding: 1rem;
+  width: 80%;
+  margin-left: 10%;
+}
+
+/* //jumbotron styling */
+.jumbotron h1 {
+  font-size: 3rem;
+}
+.jumbotron {
+  background-color: var(--mainbrand);
+  padding: 2rem;
+  padding-bottom: 1rem;
+}
+#list-logo {
+  font-size: 2.3rem;
+}
+.btn-primary {
+  background-color: var(--mainbrand);
+  border: 1px solid var(--mainbrand);
+}
+.btn-primary:hover {
+  background-color: var(--darkshade);
+}
+.btn {
+  font-size: 1.3rem;
+  height: 3rem;
+  line-height: 1rem;
+}
+.btn .material-icons {
+  /* margin-bottom: -5px; */
+  font-size: 22px;
+}
+
+#date-bar,
+#categ-bar,
+#desc-bar,
+#inputGroupSelect01 {
+  height: 4rem;
+}
+#inputGroupSelect01 {
+  margin-right: -12px;
+}
+.input-group-text {
+  background-color: var(--lightshade);
+}

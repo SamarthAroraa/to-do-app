@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/baseline_list_white_18dp.png" type="image/gif" sizes="16x16">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>
+      TO-DO
+    </title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="interface">
+        <!-- <h1></h1> -->
+        <div class="jumbotron justify-content-center">
+            <h1><i class='material-icons' id="list-logo">
+                format_list_bulleted
+              </i> THE TO-DO APP</h1>
+            <p class="lead">'Declutter' your life.</p>
+        </div>
+        <form>
+            <div class="input-group mb-3" id="desc-bar">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="description">Description</span>
+                </div>
+                <input type="text" class="form-control" id="basic-url" aria-describedby="description" placeholder="What would you like to do today?">
+              </div>
+          
+          <div class="form-row">
+            <div class="col">
+                <div class="input-group mb-3" id="categ-bar">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01">
+                      <option selected>Choose a category</option>
+                      <option value="personal">Personal</option>
+                      <option value="work">Work</option>
+                      <option value="school">School</option>
+                      <option value="cleaning">Cleaning</option>
+                      <option value="other">Other</option>
+        
+                    </select>
+                  </div>
+            </div>
+            <div class="col">
+              <input type="date" class="form-control" id="date-bar">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <!-- add icon -->
+              <i class='material-icons'>
+              add
+            </i>ADD TASK</button>
+            <button type="submit" class="btn btn-danger" id>
+              <!-- delete icon -->
+              <i class='material-icons'>&#xe872</i> DELETE TASK
+            </button>
+          
+        </form>
+      </div>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
