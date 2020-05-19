@@ -110,9 +110,9 @@
           <div class="card">
             <div class="card-body">
               <div class="done">
-                <input type="checkbox" aria-label="Checkbox for task" value="<%= t.id %>" id="check"/>
+                <input type="checkbox" aria-label="Checkbox for task" value="<%= t.id %>" class="check"/>
               </div>
-              <div class="card-desc" id="<%=t.id %>">
+              <div class="card-desc" id="<%= t.id %>">
                 <%= t.description %>
                 <div class="due">
                   <i class="material-icons calender">
