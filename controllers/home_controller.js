@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 module.exports.home = function (req, res) {
   Task.find({}, function (err, tasks) {
     if (err) {
-      console.log("Error Extracting Contacts");
+      console.log("Error Extracting tasks");
       return;
     } else {
       return res.render("home", {
@@ -26,7 +26,7 @@ module.exports.create = function (req, res) {
   console.log("req.body", req.body);
   Task.create(req.body, function (err, newtask) {
     if (err) {
-      console.log("Error creating new contact.");
+      console.log("Error creating new task.");
       return;
     } else {
       console.log(newtask);
@@ -41,7 +41,7 @@ module.exports.strikeOne = function (req, res) {
   console.log("**************", id);
   Task.findByIdAndDelete(id, function (err) {
     if (err) {
-      console.log("Error in deleting contact");
+      console.log("Error in deleting task");
       return;
     }
     return res.redirect("back");
