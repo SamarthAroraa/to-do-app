@@ -8,7 +8,7 @@ check.click(function () {
   $(id)
     .parent()
     .fadeOut(1000, function () {
-      let url = window.location.href + "strike-off/" + check.attr("value");
+      let url = window.location.href + "strike-off/" + $(this).attr("value");
       window.location.replace(url);
     });
 });
