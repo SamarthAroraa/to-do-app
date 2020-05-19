@@ -44,6 +44,15 @@ body {
 .btn-primary:hover {
   background-color: var(--darkshade);
 }
+/* delete button */
+.btn-danger {
+  background-color: #a53f2f;
+  border: 1px solid #a53f2f;
+}
+.btn-danger:hover {
+  background-color: rgb(118, 24, 10);
+}
+
 /* styles for input fields */
 #date-bar,
 #categ-bar,
@@ -63,18 +72,17 @@ body {
   height: 3rem;
   line-height: 1rem;
   position: relative;
-  left: 2.1rem;
-  
+  left: 1.8rem;
 }
 .btn .material-icons {
   font-size: 22px;
 }
-
-
-
-
-
-
+.plus {
+  margin-top: -2px;
+}
+.trash {
+  padding-top: 5px;
+}
 
 /* task section styles */
 .tasks {
@@ -122,7 +130,6 @@ body {
   color: gray;
 }
 
-
 /* task category wise colorization */
 #work {
   background-color: var(--darkaccent);
@@ -154,7 +161,6 @@ body {
   border: orange;
   opacity: 0.9;
   border-radius: 0em;
-  
 }
 #null {
   display: none;
