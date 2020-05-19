@@ -31,9 +31,12 @@ body {
   padding: 2rem;
   padding-bottom: 0.7rem;
 }
+/* list icon */
 #list-logo {
   font-size: 2.3rem;
 }
+
+/* add button */
 .btn-primary {
   background-color: var(--mainbrand);
   border: 1px solid var(--mainbrand);
@@ -41,32 +44,7 @@ body {
 .btn-primary:hover {
   background-color: var(--darkshade);
 }
-.main {
-  font-size: 1.3rem;
-  height: 3rem;
-  line-height: 1rem;
-  position: relative;
-  left: 2.1rem;
-  /* margin-left: 3rem;
-  margin-right: 2rem; */
-}
-.btn .material-icons {
-  /* margin-bottom: -5px; */
-  font-size: 22px;
-}
-.tasks {
-  height: 230px;
-  overflow: scroll;
-  margin-top: 2rem;
-  /* background-color: pink; */
-}
-.card {
-  margin-top: 0rem;
-  background-color: var(--lightshade);
-  border-radius: 0px;
-  border-left: none;
-  border-right: none;
-}
+/* styles for input fields */
 #date-bar,
 #categ-bar,
 #desc-bar,
@@ -79,6 +57,41 @@ body {
 .input-group-text {
   background-color: var(--lightshade);
 }
+/* class for both delete and add  */
+.main {
+  font-size: 1.3rem;
+  height: 3rem;
+  line-height: 1rem;
+  position: relative;
+  left: 2.1rem;
+  
+}
+.btn .material-icons {
+  font-size: 22px;
+}
+
+
+
+
+
+
+
+/* task section styles */
+.tasks {
+  height: 230px;
+  overflow: scroll;
+  margin-top: 2rem;
+  /* background-color: pink; */
+}
+/* card styles */
+.card {
+  margin-top: 0rem;
+  background-color: var(--lightshade);
+  border-radius: 0px;
+  border-left: none;
+  border-right: none;
+}
+
 .card-body {
   display: flex;
   flex-direction: row;
@@ -92,6 +105,7 @@ body {
   text-align: left;
   width: 70%;
 }
+/* task category */
 .category {
   text-transform: uppercase;
 }
@@ -99,14 +113,17 @@ body {
   height: 100%;
   width: 15%;
   margin-right: 1rem;
-  /* background-color: purple; */
 }
+/* calender icon for date */
 .calender {
   font-size: 0.7rem;
 }
 .due {
   color: gray;
 }
+
+
+/* task category wise colorization */
 #work {
   background-color: var(--darkaccent);
   border: var(--darkaccent);
@@ -142,6 +159,8 @@ body {
 #null {
   display: none;
 }
+
+/* checkbox customization */
 .card-body input[type="checkbox"] {
   height: 3rem;
   /* width: 3rem; */

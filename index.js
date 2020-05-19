@@ -24,7 +24,7 @@ app.use(express.static("assets"));
 //redirection to the routers folder
 app.use("/", require("./routers"));
 
-//listen on the por t
+//listen on the port
 app.listen(port, function (err) {
   if (err) {
     console.log(`Error running server: ${err}`);
