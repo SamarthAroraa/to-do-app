@@ -11,15 +11,20 @@ const router = express.Router();
 const port = 8000;
 //importing  the database
 const db = require("./config/mongoose");
-//redirection to the routers folder
-app.use("/", require("./routers"));
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //setting up ejs view engine
 app.set("view engine", "ejs");
 app.set("views", "./views");
 //setting up the static file directory
 app.use(express.static("assets"));
-//listen on the port
+
+//redirection to the routers folder
+app.use("/", require("./routers"));
+
+//listen on the por t
 app.listen(port, function (err) {
   if (err) {
     console.log(`Error running server: ${err}`);

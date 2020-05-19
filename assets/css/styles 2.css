@@ -6,14 +6,12 @@
   --darkaccent: #ab6e65;
   --mainbrand: #7ca8ab;
 }
-/* setting body-wide styles */
+
 body {
   background-color: var(--darkshade);
   text-align: center;
   font-family: "Josefin Sans", sans-serif;
 }
-
-/* interface box wide styles */
 .interface {
   background-color: var(--lightshade);
   padding: 1rem;
@@ -46,7 +44,7 @@ body {
   height: 3rem;
   line-height: 1rem;
   position: relative;
-  left: 2.1rem;
+  left: 2rem;
   /* margin-left: 3rem;
   margin-right: 2rem; */
 }
@@ -92,9 +90,6 @@ body {
   text-align: left;
   width: 70%;
 }
-.category {
-  text-transform: uppercase;
-}
 .category-card {
   height: 100%;
   width: 15%;
@@ -107,40 +102,12 @@ body {
 .due {
   color: gray;
 }
-#work {
-  background-color: var(--darkaccent);
-  border: var(--darkaccent);
-  opacity: 0.9;
-  border-radius: 0em;
-}
-#personal {
+.btn-primary.disabled,
+.btn-primary:disabled {
   background-color: purple;
   border: purple;
   opacity: 0.9;
   border-radius: 0em;
-}
-
-#school {
-  background-color: rgb(39, 210, 5);
-  border: rgb(39, 210, 5);
-  opacity: 0.9;
-  border-radius: 0em;
-}
-#cleaning {
-  background-color: cyan;
-  border: cyan;
-  opacity: 0.9;
-  border-radius: 0em;
-}
-#other {
-  background-color: orange;
-  border: orange;
-  opacity: 0.9;
-  border-radius: 0em;
-  
-}
-#null {
-  display: none;
 }
 .card-body input[type="checkbox"] {
   height: 3rem;

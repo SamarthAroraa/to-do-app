@@ -3,10 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/images/baseline_list_white_18dp.png" type="image/gif" sizes="16x16">
+    <link
+      rel="icon"
+      href="/images/baseline_list_white_18dp.png"
+      type="image/gif"
+      sizes="16x16"
+    />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
 
     <link
       rel="stylesheet"
@@ -23,81 +36,120 @@
       <div class="interface">
         <!-- <h1></h1> -->
         <div class="jumbotron justify-content-center">
-            <h1><i class='material-icons' id="list-logo">
-                format_list_bulleted
-              </i> THE TO-DO APP</h1>
-            <p class="lead">'Declutter' your life.</p>
+          <h1>
+            <i class="material-icons" id="list-logo">
+              format_list_bulleted
+            </i>
+            THE TO-DO APP
+          </h1>
+          <p class="lead">'Declutter' your life.</p>
         </div>
-        <form>
-            <div class="input-group mb-3" id="desc-bar">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="description">Description</span>
-                </div>
-                <input type="text" class="form-control" id="basic-url" aria-describedby="description" placeholder="What would you like to do today?">
-              </div>
-          
+        <form action="/create" method="post">
+          <div class="input-group mb-3" id="desc-bar">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="description">Description</span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              name="description"
+              aria-describedby="description"
+              placeholder="What would you like to do today?"
+              required
+            />
+          </div>
+
           <div class="form-row">
             <div class="col">
-                <div class="input-group mb-3" id="categ-bar">
-                    <div class="input-group-prepend">
-                      <label class="input-group-text" for="inputGroupSelect01">Category</label>
-                    </div>
-                    <select class="custom-select" id="inputGroupSelect01">
-                      <option selected>Choose a category</option>
-                      <option value="personal">Personal</option>
-                      <option value="work">Work</option>
-                      <option value="school">School</option>
-                      <option value="cleaning">Cleaning</option>
-                      <option value="other">Other</option>
-        
-                    </select>
+              <div class="input-group mb-3" id="categ-bar">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">
+                    Category &nbsp;</label
+                  >
                 </div>
+                <select
+                  name="category"
+                  class="custom-select"
+                  id="inputGroupSelect01"
+                >
+                  <option selected value="null">Choose a category</option>
+                  <option value="personal">Personal</option>
+                  <option value="work">Work</option>
+                  <option value="school">School</option>
+                  <option value="cleaning">Cleaning</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
             </div>
             <div class="col">
-              <input type="date" class="form-control" id="date-bar">
+              <input
+                type="date"
+                class="form-control"
+                id="date-bar"
+                name="due"
+              />
             </div>
           </div>
           <button type="submit" class="btn btn-primary main">
             <!-- add icon -->
-              <i class='material-icons'>
-              add
-            </i>ADD TASK</button>
-            <button type="submit" class="btn btn-danger main" >
-              <!-- delete icon -->
-              <i class='material-icons'>&#xe872</i> DELETE TASKS
+            <i class="material-icons">
+              add 
+            </i>
+              ADD TASK
+          </button>
+          <a href="/delete-all"
+            <button class="btn btn-danger main" >
+          <!-- delete icon -->
+          <i class='material-icons'>&#xe872</i> DELETE TASKS
             </button>
-          
+            </a>
         </form>
         <div class="tasks">
+          <% for(let t of task_list) { %>
 
-        <div class="card">
+          <div class="card">
             <div class="card-body">
-                <div class="done">
-                <input type="checkbox" aria-label="Checkbox for task" >
-            </div>
-
-                <div class="card-desc">
-                    Some Task
-                    <div class="due">
-                        <i class='material-icons calender'>
-                            date_range
-                          </i>
-                           21/05/2020
-                    </div>
+              <div class="done">
+                <input type="checkbox" aria-label="Checkbox for task" value="<%= t.id %>" id="check"/>
+              </div>
+              <div class="card-desc" id="<%=t.id %>">
+                <%= t.description %>
+                <div class="due">
+                  <i class="material-icons calender">
+                    date_range
+                  </i>
+                  <% let f_date;if(t.due!=null){let d=t.due.getDate(); let m=t.due.getMonth()+1; let y=t.due.getFullYear();  f_date=d+'/'+m+'/'+y} else f_date = "No Due Date"%>
+                  <%=  f_date %>
                 </div>
-               
-                <div class="category-card">
-                    <button type="button" class="btn btn-lg btn-primary" disabled>WORK</button></div>
+              </div>
+
+              <div class="category-card">
+                <button type="button" class="btn btn-lg btn-primary category" id="<%= t.category %>" disabled>
+                  <%= t.category %>
+                </button>
+              </div>
             </div>
+          </div>
+          <% } %>
         </div>
-            
       </div>
     </div>
-    </div>
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script> -->
+    <script src="/javascript/script.js"></script>
   </body>
 </html>
