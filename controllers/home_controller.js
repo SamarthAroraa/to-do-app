@@ -38,7 +38,7 @@ module.exports.create = function (req, res) {
 //controller for striking off a task
 module.exports.strikeOne = function (req, res) {
   let id = req.params.id;
-  console.log("**************", id);
+  console.log("deleted contact************** id:", id);
   Task.findByIdAndDelete(id, function (err) {
     if (err) {
       console.log("Error in deleting task");
