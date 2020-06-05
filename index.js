@@ -8,10 +8,12 @@ const app = express();
 const router = express.Router();
 //imprting the database
 //port initialized to 8000
-const port = 8000;
+const port =  process.env.PORT || 8000;
 //importing  the database
 const db = require("./config/mongoose");
 const bodyParser = require("body-parser");
+require('dotenv').config()
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
