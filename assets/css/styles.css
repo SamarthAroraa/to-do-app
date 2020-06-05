@@ -187,4 +187,13 @@ body {
   .category-card {
     width: 35%;
   }
+  .grow-mob {
+    width: 80%;
+    margin-top: 4px;
+    margin-left: -50px;
+  }
+  .jumbotron h1,
+  #list-logo {
+    font-size: 2rem;
+  }
 }
