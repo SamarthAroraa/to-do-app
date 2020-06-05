@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/todo_development" || p
+  process.env.MONGODB_URI || "mongodb://localhost/todo_development"
 );
 
 const db = mongoose.connection;
