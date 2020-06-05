@@ -189,11 +189,17 @@ body {
   }
   .grow-mob {
     width: 80%;
-    margin-top: 4px;
+    margin-top: 12px;
     margin-left: -50px;
+  }
+  .form-row {
+    margin-bottom: 20px;
   }
   .jumbotron h1,
   #list-logo {
     font-size: 2rem;
+  }
+  #inputGroupSelect01 {
+    margin-right: 0;
   }
 }
