@@ -1,4 +1,10 @@
 /* the main color variables for the frontend UI */
+@media only screen and (max-width: 600px) {
+  .interface {
+    width: 100%;
+  }
+}
+
 :root {
   --darkshade: #30535d;
   --lightshade: #e8ebea;
