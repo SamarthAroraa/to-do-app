@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
+const CONNECTION_URI =
+  process.env.MONGODB_URI || "mongodb://localhost/todo_development";
 require("dotenv").config();
 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/todo_development"
-);
+mongoose.connect(CONNECTION_URI, { useMongoClient: true });
 
 const db = mongoose.connection;
 
