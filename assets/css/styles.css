@@ -1,9 +1,6 @@
 /* the main color variables for the frontend UI */
-@media only screen and (max-width: 600px) {
-  .interface {
-    width: 100%;
-  }
-}
+
+/* the main color variables for the frontend UI */
 
 :root {
   --darkshade: #30535d;
@@ -177,4 +174,11 @@ body {
 .card-body input[type="checkbox"] {
   height: 3rem;
   /* width: 3rem; */
+}
+
+@media only screen and (max-width: 768px) {
+  .interface {
+    width: 100%;
+    margin: 0px;
+  }
 }
